@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import '../accounts/loginForm.css'
 import Noir from '../../assets/noir.jpg'
 import axios from 'axios';
+import Swal from 'sweetalert2'
 
 
 const regularExpression = RegExp(/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/)
@@ -74,8 +75,13 @@ onFormSubmit = event => {
 
           if (this.state.islogged===true)
           {
-
-
+            Swal.fire({
+                title: "Success!",
+                text: "Account Created Successfully ",
+                icon: 'success',
+                button:"OK!"
+            });
+           
             this.props.history.push('/jobsList');
             localStorage.setItem('userInfo',JSON.stringify(data));
 
@@ -125,7 +131,7 @@ onFormSubmit = event => {
             
               case "password":
                   error.password =
-                      value.length < 5 ? "Password should 5 characaters long" : "";
+                      value.length < 5 ? "Password should 8 characaters long" : "";
                   break;
               default:
                   break;

@@ -4708,6 +4708,11 @@
     "es5-ext" "^0.10.35"
     "es6-symbol" "^3.1.1"
 
+"es6-object-assign@^1.1.0":
+  "integrity" "sha1-wsNYJlYkfDnqEHyx5mUrb58kUjw="
+  "resolved" "https://registry.npmjs.org/es6-object-assign/-/es6-object-assign-1.1.0.tgz"
+  "version" "1.1.0"
+
 "es6-symbol@^3.1.1", "es6-symbol@~3.1.3":
   "integrity" "sha512-NJ6Yn3FuDinBaBRWl/q5X/s4koRHBrgKAu+yGI6JCBeiu3qrcbJhwT2GeR/EXVfylRk8dpQVJoLEFhK+Mu31NA=="
   "resolved" "https://registry.npmjs.org/es6-symbol/-/es6-symbol-3.1.3.tgz"
@@ -7409,10 +7414,64 @@
   dependencies:
     "p-locate" "^4.1.0"
 
+"lodash._baseflatten@^3.0.0":
+  "integrity" "sha1-B3D/gBMa9uNPO1EXlqe6UhTmX/c="
+  "resolved" "https://registry.npmjs.org/lodash._baseflatten/-/lodash._baseflatten-3.1.4.tgz"
+  "version" "3.1.4"
+  dependencies:
+    "lodash.isarguments" "^3.0.0"
+    "lodash.isarray" "^3.0.0"
+
+"lodash._basefor@^3.0.0":
+  "integrity" "sha1-dVC06SGO8J+tJDQ7YSAhx5tMIMI="
+  "resolved" "https://registry.npmjs.org/lodash._basefor/-/lodash._basefor-3.0.3.tgz"
+  "version" "3.0.3"
+
+"lodash._bindcallback@^3.0.0":
+  "integrity" "sha1-5THCdkTPi1epnhftlbNcdIeJOS4="
+  "resolved" "https://registry.npmjs.org/lodash._bindcallback/-/lodash._bindcallback-3.0.1.tgz"
+  "version" "3.0.1"
+
+"lodash._pickbyarray@^3.0.0":
+  "integrity" "sha1-H4mNlgfrVgsOFnOEt3x8bRCKpMU="
+  "resolved" "https://registry.npmjs.org/lodash._pickbyarray/-/lodash._pickbyarray-3.0.2.tgz"
+  "version" "3.0.2"
+
+"lodash._pickbycallback@^3.0.0":
+  "integrity" "sha1-/2G5oBens699MObFPeKK+hm4dQo="
+  "resolved" "https://registry.npmjs.org/lodash._pickbycallback/-/lodash._pickbycallback-3.0.0.tgz"
+  "version" "3.0.0"
+  dependencies:
+    "lodash._basefor" "^3.0.0"
+    "lodash.keysin" "^3.0.0"
+
 "lodash._reinterpolate@^3.0.0":
   "integrity" "sha1-DM8tiRZq8Ds2Y8eWU4t1rG4RTZ0="
   "resolved" "https://registry.npmjs.org/lodash._reinterpolate/-/lodash._reinterpolate-3.0.0.tgz"
   "version" "3.0.0"
+
+"lodash.isarguments@^3.0.0":
+  "integrity" "sha1-L1c9hcaiQon/AGY7SRwdM4/zRYo="
+  "resolved" "https://registry.npmjs.org/lodash.isarguments/-/lodash.isarguments-3.1.0.tgz"
+  "version" "3.1.0"
+
+"lodash.isarray@^3.0.0":
+  "integrity" "sha1-eeTriMNqgSKvhvhEqpvNhRtfu1U="
+  "resolved" "https://registry.npmjs.org/lodash.isarray/-/lodash.isarray-3.0.4.tgz"
+  "version" "3.0.4"
+
+"lodash.isfunction@^3.0.6":
+  "integrity" "sha512-AirXNj15uRIMMPihnkInB4i3NHeb4iBtNg9WRWuK2o31S+ePwwNmDPaTL3o7dTJ+VXNZim7rFs4rxN4YU1oUJw=="
+  "resolved" "https://registry.npmjs.org/lodash.isfunction/-/lodash.isfunction-3.0.9.tgz"
+  "version" "3.0.9"
+
+"lodash.keysin@^3.0.0":
+  "integrity" "sha1-IsRJPrvtsUJ5YqVLRFssinZ/tH8="
+  "resolved" "https://registry.npmjs.org/lodash.keysin/-/lodash.keysin-3.0.8.tgz"
+  "version" "3.0.8"
+  dependencies:
+    "lodash.isarguments" "^3.0.0"
+    "lodash.isarray" "^3.0.0"
 
 "lodash.memoize@^4.1.2":
   "integrity" "sha1-vMbEmkKihA7Zl/Mj6tpezRguC/4="
@@ -7423,6 +7482,22 @@
   "integrity" "sha1-brGa5aHuHdnfC5aeZs4Lf6MLXmA="
   "resolved" "https://registry.npmjs.org/lodash.omit/-/lodash.omit-4.5.0.tgz"
   "version" "4.5.0"
+
+"lodash.pick@^3.1.0":
+  "integrity" "sha1-8lKoVbIEa2G805BLJvdr0u/GVVA="
+  "resolved" "https://registry.npmjs.org/lodash.pick/-/lodash.pick-3.1.0.tgz"
+  "version" "3.1.0"
+  dependencies:
+    "lodash._baseflatten" "^3.0.0"
+    "lodash._bindcallback" "^3.0.0"
+    "lodash._pickbyarray" "^3.0.0"
+    "lodash._pickbycallback" "^3.0.0"
+    "lodash.restparam" "^3.0.0"
+
+"lodash.restparam@^3.0.0":
+  "integrity" "sha1-k2pOMJ7zMKdkXtQUWYbIWuWyCAU="
+  "resolved" "https://registry.npmjs.org/lodash.restparam/-/lodash.restparam-3.6.1.tgz"
+  "version" "3.6.1"
 
 "lodash.sortby@^4.7.0":
   "integrity" "sha1-7dFMgk4sycHgsKG0K7UhBRakJDg="
@@ -9410,6 +9485,11 @@
   "resolved" "https://registry.npmjs.org/promise-inflight/-/promise-inflight-1.0.1.tgz"
   "version" "1.0.1"
 
+"promise-polyfill@^6.0.2":
+  "integrity" "sha1-36lpQ+qcEh/KTem1hoyznTRy4Fc="
+  "resolved" "https://registry.npmjs.org/promise-polyfill/-/promise-polyfill-6.1.0.tgz"
+  "version" "6.1.0"
+
 "promise@^7.1.1":
   "integrity" "sha512-nolQXZ/4L+bP/UGlkfaIujX9BKxGwmQ9OT4mOt5yvy8iK1h3wqTEJCijzGANTCCl9nWjY41juyAn2K3Q1hLLTg=="
   "resolved" "https://registry.npmjs.org/promise/-/promise-7.3.1.tgz"
@@ -9908,6 +9988,16 @@
   dependencies:
     "lodash.throttle" "^4.1.1"
     "prop-types" "^15.5.8"
+
+"react-swal@^3.0.0":
+  "integrity" "sha512-iia1GjipLrwWxVhxrn8EW4He6RwFMJG25t3a7plonFsZVO9egTyNLWQ4+4fjzi4iUOcEU0VVnOTw7fqJx0cXZA=="
+  "resolved" "https://registry.npmjs.org/react-swal/-/react-swal-3.0.0.tgz"
+  "version" "3.0.0"
+  dependencies:
+    "lodash.isfunction" "^3.0.6"
+    "lodash.pick" "^3.1.0"
+    "prop-types" "^15.6.0"
+    "sweetalert" "^1.0.1"
 
 "react-text-mask@^5.4.3":
   "integrity" "sha1-mR77QpnjDC5sLEbRP2FxaUY+DS0="
@@ -11377,10 +11467,23 @@
     "unquote" "~1.1.1"
     "util.promisify" "~1.0.0"
 
-"sweetalert2@^6.6.1":
-  "integrity" "sha1-fEikYX3NZk3NX+f4HmzJuicqtYE="
-  "resolved" "https://registry.npmjs.org/sweetalert2/-/sweetalert2-6.6.1.tgz"
-  "version" "6.6.1"
+"sweetalert@^1.0.1":
+  "integrity" "sha1-0sMepJKyK2qNiHrqFZiaI4/AhK4="
+  "resolved" "https://registry.npmjs.org/sweetalert/-/sweetalert-1.1.3.tgz"
+  "version" "1.1.3"
+
+"sweetalert@^2.1.2":
+  "integrity" "sha512-iWx7X4anRBNDa/a+AdTmvAzQtkN1+s4j/JJRWlHpYE8Qimkohs8/XnFcWeYHH2lMA8LRCa5tj2d244If3S/hzA=="
+  "resolved" "https://registry.npmjs.org/sweetalert/-/sweetalert-2.1.2.tgz"
+  "version" "2.1.2"
+  dependencies:
+    "es6-object-assign" "^1.1.0"
+    "promise-polyfill" "^6.0.2"
+
+"sweetalert2@^11.1.9":
+  "integrity" "sha512-ox+BjtAbO8mJrbQH9TsNwMwLeTfV+ve33CVz/kKn5D/DhRiSqnw2rWL4HuBlh9Z4yqYlTD5viR5Z2K5D3avM7Q=="
+  "resolved" "https://registry.npmjs.org/sweetalert2/-/sweetalert2-11.1.9.tgz"
+  "version" "11.1.9"
 
 "symbol-observable@^1.0.4", "symbol-observable@^1.1.0", "symbol-observable@1.2.0":
   "integrity" "sha512-e900nM8RRtGhlV36KGEU9k65K3mPb1WV70OdjfxlG2EAuM1noi/E/BaW/uMhL7bPEssK8QV57vN3esixjUvcXQ=="

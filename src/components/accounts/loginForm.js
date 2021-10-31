@@ -91,15 +91,14 @@ onFormSubmit = event => {
           })
           .catch(err=>{
            
-            //alert("username or password invalid please try again");
-            Swal.fire({
+              Swal.fire({
                 title: "Error!",
-                text: "Username Or Password Is Invalid Please Try Again",
+                text: "Email Or Password Is Invalid Please Try Again",
                 icon: 'error',
                 button:"OK!"
               });
          
-            console.log(err)
+          console.log(err)
           })
   
         }    };
@@ -119,7 +118,7 @@ onFormSubmit = event => {
               break;
               case "password":
                   error.password =
-                      value.length < 5 ? "Password should 5 characaters long" : "";
+                      value.length < 5 ? "Password should 8 characaters long" : "";
                   break;
               default:
                   break;
