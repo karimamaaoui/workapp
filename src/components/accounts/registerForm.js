@@ -1,10 +1,8 @@
-import React, { Component } from "react";
-import axios from 'axios';
 import {Link} from 'react-router-dom';
-import '../accounts/loginForm.css';
-import Noir from '../../assets/noir.jpg'
+import React, { Component } from 'react'
 import '../accounts/loginForm.css'
-import Swal from 'sweetalert2'
+import Noir from '../../assets/noir.jpg'
+import axios from 'axios';
 
 
 const regularExpression = RegExp(/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/)
@@ -31,20 +29,21 @@ const validation = ({ error, ...rest }) => {
     return checkValidation;
 };
 
-class LoginForm extends Component {
-
+export class registerForm extends Component {
     constructor(props) {
         super(props)
 
         this.state = {
             
             username: '',
+            email:'',
             password: '',
             islogged: false,
             loading:true,
             message: '',
             error: {
                 username: '',
+                email:'',
                 password: ''
             }
         }
@@ -56,10 +55,11 @@ onFormSubmit = event => {
         if (validation(this.state)) {
         const data={
           username:this.state.username,
+          email:this.state.email,
           password:this.state.password
       };
       console.log(data)
-      axios.post('http://localhost:8081/api/auth/signin',data)
+      axios.post('http://localhost:8081/api/auth/signup',data)
           .then(res=>{
               console.log(res.data);
              localStorage.setItem('token',res.data.token);
@@ -92,13 +92,13 @@ onFormSubmit = event => {
           .catch(err=>{
            
             //alert("username or password invalid please try again");
-            Swal.fire({
+         /*   Swal.fire({
                 title: "Error!",
                 text: "Username Or Password Is Invalid Please Try Again",
                 icon: 'error',
                 button:"OK!"
               });
-         
+         */
             console.log(err)
           })
   
@@ -117,6 +117,12 @@ onFormSubmit = event => {
               error.username =
                   value.length < 3 ? "Userame should 3 characaters long" : "";
               break;
+              case "email":
+                error.email = regularExpression.test(value)
+                    ? ""
+                    : "Email is not valid";
+                break;
+            
               case "password":
                   error.password =
                       value.length < 5 ? "Password should 5 characaters long" : "";
@@ -142,78 +148,95 @@ onFormSubmit = event => {
                     <div className="main">
                         <div className="content">
                  
+      
 
-                    <form  onSubmit={this.onFormSubmit } >
-                    <h1>Login</h1>
-                    <div >
-        <img
-          src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-          alt="profile-img" style={{height:'20%' , width:"30%"}}
-        /> </div>
-                        <div className="form-group">
-                            
-                            <label className="labelsign">Username</label>
+            <form  onSubmit={this.onFormSubmit } >
+            <h1>Register</h1>
+            <div >
+                <img
+                src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+                alt="profile-img" style={{height:'20%' , width:"30%"}}
+                /> </div>
+                <div className="form-group">
+                    
+                    <label className="labelsign">Username</label>
+                    <input
+                        required
+                        type="text"
+                        name="username"
+                        className={error.username.length > 0 ? "is-invalid form-control" : "form-control"}
+                        onChange={this.formObject}/>
+                        {error.username.length > 0 && (
+                        <div className="alert alert-danger" style={{color:'red'}} role="alert">
+
+                                {error.username}
+                            </div>
+                        )}
+       
+                </div>
+
+                <br/>
+                <div >
+                            <label className="labelsign">Email</label>
                             <input
                                 required
-                                type="text"
-                                name="username"
-                                className={error.username.length > 0 ? "is-invalid form-control" : "form-control"}
+                                type="email"
+                                name="email"
+                                className={error.email.length > 0 ? "is-invalid form-control" : "form-control"}
                                 onChange={this.formObject}/>
-                                {error.username.length > 0 && (
-                                <div className="alert alert-danger" style={{color:'red'}} role="alert">
-
-                                        {error.username}
-                                    </div>
+                                {error.email.length > 0 && (
+                                       <div className="alert alert-danger" role="alert" style={{color:'red'}}>
+                                       {error.email}
+                                      </div>
+                               
                                 )}
-               
                         </div>
-
                         <br/>
+                <div >
+                    <label className="labelsign">Password</label>
+                    <input
+                        required
+                        type="password"
+                        name="password"
+                        className={error.password.length > 0 ? "is-invalid form-control" : "form-control"}
+                        onChange={this.formObject}/>
 
-                        <div >
-                            <label className="labelsign">Password</label>
-                            <input
-                                required
-                                type="password"
-                                name="password"
-                                className={error.password.length > 0 ? "is-invalid form-control" : "form-control"}
-                                onChange={this.formObject}/>
+                        {error.password.length > 0 && (
+                        <div className="alert alert-danger" style={{color:'red'}} role="alert">
 
-                                {error.password.length > 0 && (
-                                <div className="alert alert-danger" style={{color:'red'}} role="alert">
+                                {error.password}
+                            </div>
+                        )}
+       
+</div>
 
-                                        {error.password}
-                                    </div>
-                                )}
-               
-        </div>
+             <br/>
+         
+             <div className="d-grid mt-3">
+                <button type="submit" value="submit"  >submit</button>
+            </div>
+            </form> 
+            </div>
 
-                     <br/>
-                 
-                     <div className="d-grid mt-3">
-                        <button type="submit" value="submit"  >submit</button>
-                    </div>
-                    </form> 
-                    </div>
-       <div className="form-img">
+<div className="form-img">
          <img src={Noir} alt="contact" />
-         <p className="youdont" style={{marginTop:'-390px'}}>Don't have an account ? </p>
+         <p className="youdont" style={{marginTop:'-290px'}}>Don't have an account ? </p>
 
-        <Link to="/register">
+        <Link to="/login">
          <p className="img-btn" style={{marginTop:'-190px'}}>
-            <span className="m-up">
+            <span className="m-up" >
                 
-                Register
+                Login
                 </span>
         </p></Link>
   
         </div>
       </div>
-
 </div>
 </div>
 
-);
+        )
     }
 }
-export default LoginForm
+
+export default registerForm

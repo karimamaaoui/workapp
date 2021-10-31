@@ -18,9 +18,9 @@ function Agent() {
                 </p>
             </div>
             <div className="b-container">
-                <Agentbox image={agentImg1}  name="user1"/>
-                <Agentbox image={agentImg2}  name="user2"/>
-                <Agentbox image={agentImg3}  name="user3"/>
+                <Agentbox image={agentImg3}  name="Hejer"/>
+                <Agentbox image={agentImg1}  name="Aymen"/>
+                <Agentbox image={agentImg3}  name="Karima"/>
 
             </div>
         </div>

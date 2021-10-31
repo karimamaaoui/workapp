@@ -63,7 +63,7 @@ class NavbarList extends Component {
                     </ul>
 
                     <Link to='/login' className="property">
-                    Register     
+                    Login     
                 </Link>
 
                       

@@ -19,7 +19,7 @@ function howItWorks() {
 
                     <div>
                     <span><MdIcons.MdOutlineWorkOutline/> </span>
-                    <h4>Find a Job </h4>
+                    <h4>Get a good Job </h4>
                     <p> ng hidden in the middle of text. All the Lorem I
                 psum generators on the Internet tend to repeat pr
                </p>

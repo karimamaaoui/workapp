@@ -8,9 +8,11 @@ function Header() {
             <NavbarList/>
             <div className="intro">
                 <p>looking for a job !</p>
-                <h1> <span>Buy </span>and<span> Sell</span> Properties</h1>
+                <h1> <span>Search </span>and<span> Get</span> A Job</h1>
                 <p className="details">
-                    dfdfsdddddddddd fdsssssssssssss dfssssssssssssssssssssss
+                <span><b>Khadamny</b></span> is a Tunisian job portal in Tunisia helps you in your job search and offers you many 
+                job offers and CVs on the Internet, daily news, advice
+
                 </p>
                 <a href="#" className="header-btn">Details</a>
           
