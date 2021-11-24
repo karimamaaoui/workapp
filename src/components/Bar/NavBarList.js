@@ -1,4 +1,3 @@
-//import React from 'react';
 import{FormControl, Navbar ,Nav,Form, Button} from "react-bootstrap";
 import {Redirect} from 'react-router-dom';
 import React, { Component } from 'react'
@@ -7,6 +6,7 @@ import logo from '../../assets/Logo.png'
 import {Link,BrowserRouter} from 'react-router-dom';
 
 
+             
 class NavbarList extends Component {
     constructor(props) {
         super(props);
@@ -59,13 +59,16 @@ class NavbarList extends Component {
                         <li>
                         <Link to='/login' >CONTACT</Link>
                                 </li>
-
-                    </ul>
-
-                    <Link to='/login' className="property">
+                                <li>
+                                <Link to='/login' className="property">
                     Login     
                 </Link>
 
+                                </li>
+
+                    </ul>
+
+                
                       
             </Navbar>
     </div>

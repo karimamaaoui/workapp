@@ -1,6 +1,6 @@
 import {Link} from 'react-router-dom';
 import React, { Component } from 'react'
-import '../accounts/loginForm.css'
+import './loginForm.css'
 import Noir from '../../assets/noir.jpg'
 import axios from 'axios';
 import Swal from 'sweetalert2'
@@ -226,7 +226,7 @@ onFormSubmit = event => {
 
 <div className="form-img">
          <img src={Noir} alt="contact" />
-         <p className="youdont" style={{marginTop:'-290px'}}>Don't have an account ? </p>
+         <p className="youdont" style={{marginTop:'-290px'}}>Already have an account ? </p>
 
         <Link to="/login">
          <p className="img-btn" style={{marginTop:'-190px'}}>

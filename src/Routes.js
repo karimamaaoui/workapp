@@ -1,9 +1,12 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
-import LoginForm from './components/accounts/loginForm';
+import LoginForm from './components/authentification/loginForm';
 import Start from './Started'
-import RegisterForm from './components/accounts/registerForm';
+import RegisterForm from './components/authentification/registerForm';
 import ListOfJobs from './components/job/listOfJobs'
+import Profile from './components/accounts/profile'
+import EditProfile from './components/accounts/editProfile';
+import FormComponent from './components/accounts/updateProfile/formComponent';
 
 const Routes = () => {
     
@@ -17,7 +20,9 @@ const Routes = () => {
 
         <Route exact path="/register" component={RegisterForm} />
         <Route exact path="/jobsList" component={ListOfJobs} />
-     
+        <Route exact path="/profile" component={Profile} />
+        <Route exact path="/editprofile" component={EditProfile} />
+        <Route exact path="/form" component={FormComponent} />
      
         <Redirect to="/" />
     </Switch>

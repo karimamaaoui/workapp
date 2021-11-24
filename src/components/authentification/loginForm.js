@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import axios from 'axios';
 import {Link} from 'react-router-dom';
-import '../accounts/loginForm.css';
+import './loginForm.css';
 import Noir from '../../assets/noir.jpg'
-import '../accounts/loginForm.css'
+import './loginForm.css'
 import Swal from 'sweetalert2'
 
 
