@@ -7,17 +7,10 @@ function Finished({state}) {
     return (
         <Paper component={Box} p={2}>
                  <Box p={1} mb={2}  >
-                            {renderText({ label : "Please Fill personal Data" ,variant:"h6"}) }
+                            {renderText({ label : "Your Given Details" ,variant:"h6"}) }
                         </Box>
 
                         
-                         <Grid container spacing={2} justify="flex-end">
-                               <Box p={2}>
-                               {renderText({
-                                   label: "Your Given Details" ,
-                                variant:"h6"                                   
-                               })} 
-                               </Box>    
                                
                          <Grid container spacing={2} justify="flex-end">
                                <Box p={2}>
@@ -26,7 +19,6 @@ function Finished({state}) {
                                } 
                                </Box>    </Grid>       
                                  
-                        </Grid>
         </Paper>
     )
 }

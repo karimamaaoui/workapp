@@ -5,7 +5,6 @@ import Start from './Started'
 import RegisterForm from './components/authentification/registerForm';
 import ListOfJobs from './components/job/listOfJobs'
 import Profile from './components/accounts/profile'
-import EditProfile from './components/accounts/editProfile';
 import FormComponent from './components/accounts/updateProfile/formComponent';
 
 const Routes = () => {
@@ -21,8 +20,7 @@ const Routes = () => {
         <Route exact path="/register" component={RegisterForm} />
         <Route exact path="/jobsList" component={ListOfJobs} />
         <Route exact path="/profile" component={Profile} />
-        <Route exact path="/editprofile" component={EditProfile} />
-        <Route exact path="/form" component={FormComponent} />
+        <Route exact path="/editProfile" component={FormComponent} />
      
         <Redirect to="/" />
     </Switch>

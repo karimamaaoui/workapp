@@ -7,7 +7,7 @@ function Step3({state,handleChange,handleNextPage,handlePrev}) {
     return (
         <Paper component={Box} p={2}>
                  <Box p={1} mb={2}  >
-                            {renderText({ label : "Professional Details" ,variant:"h6"}) }
+                {renderText({ label : "Professional Details" ,variant:"h6"}) }
                         </Box>
                    
               <Grid container spacing={2} style={{marginBottom:"10px"}}>

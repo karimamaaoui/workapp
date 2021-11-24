@@ -10,7 +10,7 @@ class Profile extends Component{
 
   handleUpdate()
   {
-      this.props.history.push(`/editprofile`);
+      this.props.history.push(`/editProfile`);
   
   }
 
