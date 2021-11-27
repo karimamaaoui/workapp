@@ -5,7 +5,7 @@ import { Grid, Box ,Paper } from '@material-ui/core'
  
 function Finished({state}) {
     return (
-        <Paper component={Box} p={2}>
+        <Paper component={Box} p={2} style={{backgroundColor:"#AFA7BB"}}>
                  <Box p={1} mb={2}  >
                             {renderText({ label : "Your Given Details" ,variant:"h6"}) }
                         </Box>

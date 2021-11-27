@@ -63,7 +63,6 @@ onFormSubmit = event => {
       axios.post('http://localhost:8081/api/auth/signup',data)
           .then(res=>{
               console.log(res.data);
-             localStorage.setItem('token',res.data.token);
             
              this.setState ({    
                 islogged: true,
@@ -72,6 +71,7 @@ onFormSubmit = event => {
           });
           console.log(this.state.message);
           console.log(this.state.loading);
+          
 
           if (this.state.islogged===true)
           {
@@ -82,15 +82,14 @@ onFormSubmit = event => {
                 button:"OK!"
             });
            
-            this.props.history.push('/jobsList');
-            localStorage.setItem('userInfo',JSON.stringify(data));
+            this.props.history.push('/login');
 
         
           }
           else {
             
             
-            this.props.history.push('/login');
+            this.props.history.push('/');
 
           }
               

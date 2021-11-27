@@ -8,6 +8,9 @@ import Step1 from './step1';
 import Step2 from './Step2';
 import Step3 from './Step3';
 import Finished from './Finished';
+import NavbarList from '../../Bar/NavBarList';
+
+import {  Redirect } from "react-router-dom";
 
 export class FormComponent extends Component {
     state ={
@@ -38,6 +41,10 @@ export class FormComponent extends Component {
 
 
     render() {
+        
+        if (localStorage.getItem("token")===null) {
+            return <Redirect to="/login" />;
+          }
         const { classes } =this.props;
 
         const handleChange =
@@ -81,7 +88,7 @@ export class FormComponent extends Component {
         }
 
         const StepperStep=[
-            {label:"Personal Bip"},
+            {label:"Personal Bio"},
             {label:"Educational"},
             {label:"Professional"}
 
@@ -137,16 +144,20 @@ export class FormComponent extends Component {
     
     
         return (
-            <div className="body">
+        <div>
+            <div>
+                <NavbarList/>
+            </div>
+            <div className="body" >
                 <Grid container spacing={2} >
                     <Grid item xs={12} sm={7}>
-                        <form className="formComponent"> 
-                        <Paper component={Box} p={2}>
+                        <form className="formComponent" > 
+                        <Paper style={{backgroundColor:"#AFA7BB"}} component={Box} p={2}>
                         <Box  mb={1} pt={2} >
                             {renderText({ label : "User Details" })}
                            
                            
-                            <Stepper alternativeLabel activeStep={this.state.currentStep}>
+                            <Stepper alternativeLabel activeStep={this.state.currentStep} >
                             {StepperStep.map((item, i) => (
                                 <Step key={i} >
                                       <StepButton color="inherit" >
@@ -166,7 +177,7 @@ export class FormComponent extends Component {
                         </Grid>
 
                 </Grid>
-            </div>
+            </div></div>
         )
     }
 }

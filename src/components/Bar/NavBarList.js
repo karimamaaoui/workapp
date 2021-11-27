@@ -53,7 +53,7 @@ class NavbarList extends Component {
                         <Link to='/login' >AGENTS</Link>
                              </li>
                         <li>  
-                        <Link to='/login' >AGENTS</Link>
+                        <Link to='/profile' >PROFILE</Link>
                         
                         </li>
                         <li>

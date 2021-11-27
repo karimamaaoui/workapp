@@ -5,6 +5,8 @@ import './loginForm.css';
 import Noir from '../../assets/noir.jpg'
 import './loginForm.css'
 import Swal from 'sweetalert2'
+import {  Redirect } from "react-router-dom";
+
 
 
 const regularExpression = RegExp(/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/)
@@ -62,7 +64,7 @@ onFormSubmit = event => {
       axios.post('http://localhost:8081/api/auth/signin',data)
           .then(res=>{
               console.log(res.data);
-             localStorage.setItem('token',res.data.token);
+             localStorage.setItem('token',res.data.accessToken);
             
              this.setState ({    
                 islogged: true,
@@ -71,13 +73,16 @@ onFormSubmit = event => {
           });
           console.log(this.state.message);
           console.log(this.state.loading);
+          console.log("token",res.data.accessToken)
+          console.log("Id",res.data.id)
+          console.log("Role",res.data.roles)
+          const id =res.data.id;
 
           if (this.state.islogged===true)
-          {
+          { 
+            localStorage.setItem('userInfo',JSON.stringify(res.data));
 
-
-            this.props.history.push('/jobsList');
-            localStorage.setItem('userInfo',JSON.stringify(data));
+            this.props.history.push(`/editProfile`);
 
         
           }
@@ -133,7 +138,6 @@ onFormSubmit = event => {
     render() {
 
         const { error } = this.state;
-
         return (
               
             <div className="login-form">

@@ -4,7 +4,7 @@ import {renderButton,renderInputText,renderPasswordText, renderText} from '../up
 
 function Step1({state,handleChange,handleNextPage}) {
     return (
-        <Paper component={Box} p={2}>
+        <Paper component={Box} p={2} style={{backgroundColor:"#AFA7BB"}}>
                  <Box p={1} mb={2}  >
                             {renderText({ label : "Please Fill personal Data" ,variant:"h6"}) }
                         </Box>

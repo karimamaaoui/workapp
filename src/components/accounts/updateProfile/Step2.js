@@ -4,7 +4,7 @@ import {renderButton,renderInputText,renderPasswordText, renderText} from '../up
 
 function Step2({state,handleChange,handleNextPage,handlePrev}) {
     return (
-        <Paper component={Box} p={2}>
+        <Paper component={Box} p={2} style={{backgroundColor:"#AFA7BB"}}>
                  <Box p={1} mb={2}  >
                             {renderText({ label : "A bit About Education" ,variant:"h6"}) }
                         </Box>

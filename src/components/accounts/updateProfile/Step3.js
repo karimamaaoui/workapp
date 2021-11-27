@@ -5,7 +5,7 @@ import {renderButton,renderInputText,renderPasswordText, renderText} from '../up
 
 function Step3({state,handleChange,handleNextPage,handlePrev}) {
     return (
-        <Paper component={Box} p={2}>
+        <Paper component={Box} p={2} style={{backgroundColor:"#AFA7BB"}}>
                  <Box p={1} mb={2}  >
                 {renderText({ label : "Professional Details" ,variant:"h6"}) }
                         </Box>
