@@ -9,11 +9,18 @@ import Step2 from './Step2';
 import Step3 from './Step3';
 import Finished from './Finished';
 import NavbarList from '../../Bar/NavBarList';
-
+import Swal from 'sweetalert2'
 import {  Redirect } from "react-router-dom";
+import axios from 'axios';
+ 
+const emails=window.localStorage.getItem('userInfo');
+
+const emailuser = JSON.parse(emails);
+
 
 export class FormComponent extends Component {
     state ={
+        id: emailuser.id,
         users:{
             firstName:'',
             lastName:'',
@@ -37,9 +44,6 @@ export class FormComponent extends Component {
         currentStep:0,
 
     }
-
-
-
     render() {
         
         if (localStorage.getItem("token")===null) {
@@ -65,6 +69,9 @@ export class FormComponent extends Component {
             console.log(this.state.users)
             
         }
+        
+    
+      
 
         const handleNextPage =()=>{
             console.log("next page clicked")
@@ -94,7 +101,48 @@ export class FormComponent extends Component {
 
 
         ]
-
+        const onUsersDetails = (event) => {
+            event.preventDefault();
+            const config={
+                headers:{
+                    Authorization: 'Bearer ' +localStorage.getItem('token')            }
+                    
+                };
+                console.log("id :",this.state.id);
+                console.log("state",this.state);
+    
+                
+            axios.put('http://localhost:8081/api/changeuserdetails'+'/'+(this.state.id),this.state.users,config)
+                .then(res=>{
+                  console.log(res.data);
+                  Swal.fire({
+                    title: "Success!",
+                    text: "Add successfuly",
+                    icon: 'success',
+                    button:"OK!"
+                  });
+             
+        
+                  
+                console.log(this.state.users)
+                 
+                  
+              })
+              .catch(err=>{
+                Swal.fire({
+                    title: "Error!",
+                    text: "Field Is Invalid Please Try Again",
+                    icon: 'error',
+                    button:"OK!"
+                  });
+             
+        
+              console.log(err)
+              })
+        
+            }    ;
+        
+      
         const getStepItems = (steps) =>{
             switch (steps){
                 case 0:
@@ -130,6 +178,7 @@ export class FormComponent extends Component {
                 case 3:
                     return <Finished
                         state={this.state.users}
+                        onUsersDetails={onUsersDetails}
                     />
 
                  default: 
@@ -144,15 +193,19 @@ export class FormComponent extends Component {
     
     
         return (
+            
         <div>
+            {console.log(this.state.id)}
             <div>
                 <NavbarList/>
-            </div>
+            </div>          
+            
             <div className="body" >
+
                 <Grid container spacing={2} >
                     <Grid item xs={12} sm={7}>
                         <form className="formComponent" > 
-                        <Paper style={{backgroundColor:"#AFA7BB"}} component={Box} p={2}>
+                        <Paper style={{backgroundColor:"#DCE3ED"}} component={Box} p={2}>
                         <Box  mb={1} pt={2} >
                             {renderText({ label : "User Details" })}
                            
@@ -160,6 +213,7 @@ export class FormComponent extends Component {
                             <Stepper alternativeLabel activeStep={this.state.currentStep} >
                             {StepperStep.map((item, i) => (
                                 <Step key={i} >
+                                    
                                       <StepButton color="inherit" >
                                           {item.label}
                                 </StepButton>

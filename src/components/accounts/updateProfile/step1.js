@@ -1,11 +1,16 @@
 import { Paper,Box,Grid } from '@material-ui/core'
 import React from 'react'
-import {renderButton,renderInputText,renderPasswordText, renderText} from '../updateProfile/displayComponent'
+import {renderButton,renderInputText,renderPasswordText, renderSelect, renderText} from '../updateProfile/displayComponent'
+import StepOne from '../../../assets/StepOne.png'
+
 
 function Step1({state,handleChange,handleNextPage}) {
     return (
-        <Paper component={Box} p={2} style={{backgroundColor:"#AFA7BB"}}>
+
+        <Paper component={Box} p={2} style={{backgroundColor:"#DCE3ED"}}>
                  <Box p={1} mb={2}  >
+                 <img src={StepOne} width="15%"  alt="step1" />
+                            
                             {renderText({ label : "Please Fill personal Data" ,variant:"h6"}) }
                         </Box>
                    
@@ -44,9 +49,13 @@ function Step1({state,handleChange,handleNextPage}) {
                         </Grid>
                         <Grid item xs={12} sm={6}>
                         <Box>
-                            {renderInputText({label:'Gender',
-                                                name:"gender",
+                            {renderSelect({label:'Gender',
+                                                name:"genre",
                                                 state,
+                                                options:[
+                                                    {key:"male",value:"MALE"},
+                                                    {key:"female",value:"FEMALE"}
+                                                ],
                                                 handleChange
                                                 })}
                         </Box>

@@ -35,8 +35,8 @@ const Routes = () => {
 
         <Route exact path="/register" component={RegisterForm}/>
         <Route exact path="/jobsList" component={ListOfJobs} />
-        <Route exact path="/editProfile" component={FormComponent} />
-        <ProtectedRoute path="/profile">
+        <ProtectedRoute exact path="/editProfile"> <FormComponent/> </ProtectedRoute>
+        <ProtectedRoute exact path="/profile">
           <Profile />
         </ProtectedRoute>
        

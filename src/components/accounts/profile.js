@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import NavbarList from '../Bar/NavBarList'
 import './profile.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {  Redirect } from "react-router-dom";
+import {  Redirect ,useHistory } from "react-router-dom";
 import axios from 'axios';
-
+import { Link } from 'react-router-dom';
 
 const emails=window.localStorage.getItem('userInfo');
 
@@ -19,7 +19,8 @@ class Profile extends Component{
       islogout: false,
       lists:[],
 
-    };
+    };  
+    
   }
   
   signOut = () => {
@@ -30,12 +31,6 @@ class Profile extends Component{
       islogout: true
     });
   };
- 
-  handleUpdate()
-  {
-      this.props.history.push(`/editProfile`);
-  
-  }
   componentDidMount()
   {
     console.log("id idi ",this.state.id)
@@ -65,6 +60,11 @@ class Profile extends Component{
 
   }
 
+  handleUpdate(id)
+  {
+      this.props.history.push(`/editProfile/${id}`);
+
+  }
   render(){
     if (this.state.islogout) {
       return <Redirect to="/login" />;
@@ -75,37 +75,41 @@ class Profile extends Component{
 
         <div>
             <NavbarList/>  
-             <button onClick={this.signOut} href="#">
-              Sign Out
-            </button>
-                                      
-
+            
         
         <div className="container emp-profile" >
                      
-                          
-          <form>
+        <button onClick={this.signOut} href="/" style={{marginLeft:'90%', marginTop:"2%" }}>
+              Sign Out
+            </button>
+                                      
+        
+          <form style={{ marginTop:"-6%" ,backgroundColor:"#DDDAE1"}}>
 
           <div className="row">
               <div className="col-md-4">
               <div style={{marginTop:"20%"}}>
-              <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150"  />
+              <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="45%"  />
               </div>
               <div >
 
-              <div className="col-md-6" style={{marginLeft:'75%', marginTop:"-40%" }} >
+              <div className="col-md-6" style={{marginLeft:'75%', marginTop:"-30%" }} >
                 <div className="profile-head">
                 <h4>John Doe </h4>
                 <h6> web developer </h6>
                       <p className="profile-rating mt-3 mb-5" >Full Stack Developer</p>
                     </div></div>
                     </div>
-                    <div style={{marginLeft:'270%', marginTop:"-42%" }} >
-                      <input type="submit" className="profile-edit-btn" style={{borderRadius:'2em'}} onClick={ ()=>this.handleUpdate()}   value="Edit Profile" />
+                    <div style={{marginLeft:'266%', marginTop:"-8%" }} >
+                   
+                         <Link to="/editProfile">
+                         <input type="button" className="profile-edit-btn" style={{borderRadius:'2em'}} value="edit"  />
+                         </Link>
+
                     </div>
                 </div>
                 <div className="row">
-                <div className="col-md-4" style={{marginTop:'15%',marginLeft:"5%"}} >
+                <div className="col-md-4" style={{marginTop:'3%',marginLeft:"5%"}} >
                   
                 <div className="card mt-3">
                     <ul className="list-group list-group-flush">
@@ -113,7 +117,7 @@ class Profile extends Component{
                         <h6 className="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe mr-2 icon-inline"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>Website</h6>
                         <span className="text-secondary">lien<a href=""></a></span>
                       </li>
-                      <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                      <li className="list-group-item d-flex justifsy-content-between align-items-center flex-wrap">
                         <h6 className="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github mr-2 icon-inline"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>Github</h6>
                         <span className="text-secondary">lien</span>
                       </li>
@@ -133,7 +137,7 @@ class Profile extends Component{
                   </div>
                   </div>
           
-              <div className="col" style={{marginTop:'12%',marginLeft:"5%"}} >
+              <div className="col" style={{marginTop:'2%',marginLeft:"5%"}} >
 
               
               <div className="col-md-10">

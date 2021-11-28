@@ -36,7 +36,7 @@ class NavbarList extends Component {
                     <div>
                     <Navbar  className="navbar" >
                 <a href="#">
-                    <img src={logo} alt=""/>
+                    <img src={logo} alt=""  width="55%"/>
                      </a>
 
                      <input className="menu-btn" type="checkbox" id="menu-btn" />

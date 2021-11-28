@@ -1,4 +1,4 @@
-import { Button, TextField, Typography } from "@material-ui/core"
+import { Button, MenuItem, TextField, Typography } from "@material-ui/core"
 
 export const renderText = ({label , color , align , variant}) =>(
     <Typography
@@ -63,3 +63,31 @@ export const renderText = ({label , color , align , variant}) =>(
     {label}
   </Button>
   )
+
+  export const renderSelect = ({label,color,name,state,options,handleChange}) =>{
+    const {users,errors} = state;
+    return(
+    <TextField
+    select
+    label={label}
+    color={color ? color: "primary"}
+    variant="outlined"
+    fullWidth
+    size="small"
+    name={name}
+    value={users[name]}
+    error={errors[name]}
+    helperText={errors[name]}
+    onChange={handleChange}
+    margin="normal"
+
+    >        
+    {options.map((item)=>(
+        <MenuItem key={item.value} value={item.value} >
+            {item.value}  
+        </MenuItem>
+        ))}
+        </TextField>
+
+    );
+  }
