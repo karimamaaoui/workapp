@@ -4766,6 +4766,11 @@
     "minimalistic-assert" "^1.0.1"
     "minimalistic-crypto-utils" "^1.0.1"
 
+"emailjs-com@^3.2.0":
+  "integrity" "sha512-Prbz3E1usiAwGjMNYRv6EsJ5c373cX7/AGnZQwOfrpNJrygQJ15+E9OOq4pU8yC977Z5xMetRfc3WmDX6RcjAA=="
+  "resolved" "https://registry.npmjs.org/emailjs-com/-/emailjs-com-3.2.0.tgz"
+  "version" "3.2.0"
+
 "emittery@^0.7.1":
   "integrity" "sha512-A8OG5SR/ij3SsJdWDJdkkSYUjQdCUx6APQXem0SaEePBSRg4eymGYwBkKo1Y6DU+af/Jn2dBQqDBvjnr9Vi8nQ=="
   "resolved" "https://registry.npmjs.org/emittery/-/emittery-0.7.2.tgz"
@@ -6004,7 +6009,7 @@
   "resolved" "https://registry.npmjs.org/hex-color-regex/-/hex-color-regex-1.1.0.tgz"
   "version" "1.1.0"
 
-"history@^4.9.0":
+"history@^4.10.1", "history@^4.9.0":
   "integrity" "sha512-36nwAD620w12kuzPAsyINPWJqlNbij+hpK1k9XRloDtym8mxzGYl2c17LnV6IAGB2Dmg4tEa7G7DlawS0+qjew=="
   "resolved" "https://registry.npmjs.org/history/-/history-4.10.1.tgz"
   "version" "4.10.1"
@@ -7633,6 +7638,11 @@
     "parse-json" "^2.2.0"
     "pify" "^2.0.0"
     "strip-bom" "^3.0.0"
+
+"load-more@^0.0.3":
+  "integrity" "sha1-54QpQIvz1MW67fcaYEecqvO6Czo="
+  "resolved" "https://registry.npmjs.org/load-more/-/load-more-0.0.3.tgz"
+  "version" "0.0.3"
 
 "loader-runner@^2.4.0":
   "integrity" "sha512-Jsmr89RcXGIwivFY21FcRrisYZfvLMTWx5kOLc+JTxtpBOG6xML0vzbc6SEQG2FO9/4Fc3wW4LVcB5DmGflaRw=="
@@ -10300,6 +10310,11 @@
     "lodash.throttle" "^4.1.1"
     "prop-types" "^15.5.8"
 
+"react-st-modal@^1.1.3":
+  "integrity" "sha512-QNAKjxPPKcHHGDKvXjcTkGgSzxd495nBxunGf3t4XfKjEDARKANcFg8yC1a3T2h/kXKB+YQfVuR5bK9iERWDDg=="
+  "resolved" "https://registry.npmjs.org/react-st-modal/-/react-st-modal-1.1.3.tgz"
+  "version" "1.1.3"
+
 "react-swal@^3.0.0":
   "integrity" "sha512-iia1GjipLrwWxVhxrn8EW4He6RwFMJG25t3a7plonFsZVO9egTyNLWQ4+4fjzi4iUOcEU0VVnOTw7fqJx0cXZA=="
   "resolved" "https://registry.npmjs.org/react-swal/-/react-swal-3.0.0.tgz"
@@ -10394,6 +10409,11 @@
     "prop-types" "^15.5.8"
     "react-popper" "^2.2.4"
     "react-transition-group" "^4.4.2"
+
+"read-more-react@^1.0.10":
+  "integrity" "sha512-8IRDU/tJX1hLbHjPxJHeUxAhm/wC8RHPSbAA+3mS7Dk13/PJf9ra7Z18apkqqPkENIoEaQI5NqhIMQIa1vOxfw=="
+  "resolved" "https://registry.npmjs.org/read-more-react/-/read-more-react-1.0.10.tgz"
+  "version" "1.0.10"
 
 "read-pkg-up@^2.0.0":
   "integrity" "sha1-a3KoBImE4MQeeVEP1en6mbO1Sb4="

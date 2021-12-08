@@ -95,7 +95,7 @@ class Profile extends Component{
 
               <div className="col-md-6" style={{marginLeft:'75%', marginTop:"-30%" }} >
                 <div className="profile-head">
-                <h4>John Doe </h4>
+                <h4>{this.state.lists.username} </h4>
                 <h6> web developer </h6>
                       <p className="profile-rating mt-3 mb-5" >Full Stack Developer</p>
                     </div></div>

@@ -97,13 +97,13 @@ onFormSubmit = event => {
           .catch(err=>{
            
             //alert("username or password invalid please try again");
-         /*   Swal.fire({
+            Swal.fire({
                 title: "Error!",
                 text: "Username Or Password Is Invalid Please Try Again",
                 icon: 'error',
                 button:"OK!"
               });
-         */
+         
             console.log(err)
           })
   

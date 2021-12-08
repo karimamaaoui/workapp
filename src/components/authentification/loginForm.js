@@ -82,7 +82,7 @@ onFormSubmit = event => {
           { 
             localStorage.setItem('userInfo',JSON.stringify(res.data));
 
-            this.props.history.push(`/editProfile`);
+            this.props.history.push(`/offres`);
 
         
           }
